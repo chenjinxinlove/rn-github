@@ -4,50 +4,176 @@
  * @flow
  */
 
-import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import React, { Component } from 'react'
+import { AppRegistry, StyleSheet, Image, Text, View } from 'react-native'
+import TabNavigator from 'react-native-tab-navigator'
 
 export default class rngithub extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
-    );
-  }
+	constructor(props) {
+		super(props)
+		this.state = {
+			selectedTab: 'tb_popular',
+		}
+	}
+	render() {
+		return (
+			<View style={styles.container}>
+				<TabNavigator>
+					<TabNavigator.Item
+						selected={this.state.selectedTab === 'tb_popular'}
+						seselectedTitleStyle={{color: red}}
+						title="Home"
+						renderIcon={() => (
+							<Image style={styles.image} source={require('./res/images/ic_polular.png')} />
+						)}
+						renderSelectedIcon={() => (
+							<Image
+								style={[styles.image, { tintColor: 'red' }]}
+								source={require('./res/images/ic_polular.png')}
+							/>
+						)}
+						badgeText="1"
+						onPress={() => this.setState({ selectedTab: 'home' })}
+					>
+						<View style={styles.page1} />
+					</TabNavigator.Item>
+					<TabNavigator.Item
+						selected={this.state.selectedTab === 'tb_trending'}
+						seselectedTitleStyle = {
+							{
+								color: blud
+							}
+						}
+						title="Profile"
+						renderIcon={() => (
+							<Image style={styles.image} source={require('./res/images/ic_trending.png')} />
+						)}
+						renderSelectedIcon={() => (
+							<Image
+								style={[styles.image, { tintColor: 'red' }]}
+								source={require('./res/images/ic_trending.png')}
+							/>
+						)}
+						renderBadge={() => <CustomBadgeView />}
+						onPress={() => this.setState({ selectedTab: 'tb_favorite' })}
+					>
+						<View style={styles.page2} />
+					</TabNavigator.Item>
+					<TabNavigator.Item
+						selected={this.state.selectedTab === 'tb_my'}
+						seselectedTitleStyle = {{color: blud}}
+						title="Profile"
+						renderIcon={() => (
+							<Image style={styles.image} source={require('./res/images/ic_trending.png')} />
+						)}
+						renderSelectedIcon={() => (
+							<Image
+								style={[styles.image, { tintColor: 'red' }]}
+								source={require('./res/images/ic_trending.png')}
+							/>
+						)}
+						renderBadge={() => <CustomBadgeView />}
+						onPress={() => this.setState({ selectedTab: 'profile' })}
+					>
+						<View style={styles.page2} />
+					</TabNavigator.Item>
+					<TabNavigator.Item
+						selected={this.state.selectedTab === 'profile'}
+						seselectedTitleStyle = {{color: blud}}
+						title="Profile"
+						renderIcon={() => (
+							<Image style={styles.image} source={require('./res/images/ic_trending.png')} />
+						)}
+						renderSelectedIcon={() => (
+							<Image
+								style={[styles.image, { tintColor: 'red' }]}
+								source={require('./res/images/ic_trending.png')}
+							/>
+						)}
+						renderBadge={() => <CustomBadgeView />}
+						onPress={() => this.setState({ selectedTab: 'profile' })}
+					>
+						<View style={styles.page2} />
+					</TabNavigator.Item>
+					<TabNavigator.Item
+						selected={this.state.selectedTab === 'profile'}
+						seselectedTitleStyle = {{color: blud}}
+						title="Profile"
+						renderIcon={() => (
+							<Image style={styles.image} source={require('./res/images/ic_trending.png')} />
+						)}
+						renderSelectedIcon={() => (
+							<Image
+								style={[styles.image, { tintColor: 'red' }]}
+								source={require('./res/images/ic_trending.png')}
+							/>
+						)}
+						renderBadge={() => <CustomBadgeView />}
+						onPress={() => this.setState({ selectedTab: 'profile' })}
+					>
+						<View style={styles.page2} />
+					</TabNavigator.Item>
+					<TabNavigator.Item
+						selected={this.state.selectedTab === 'profile'}
+						seselectedTitleStyle={{ color: blud }}
+						title="Profile"
+						renderIcon={() => (
+							<Image style={styles.image} source={require('./res/images/ic_trending.png')} />
+						)}
+						renderSelectedIcon={() => (
+							<Image
+								style={[styles.image, { tintColor: 'red' }]}
+								source={require('./res/images/ic_trending.png')}
+							/>
+						)}
+						renderBadge={() => <CustomBadgeView />}
+						onPress={() => this.setState({ selectedTab: 'profile' })}
+					>
+						<View style={styles.page2} />
+					</TabNavigator.Item>
+					<TabNavigator.Item
+						selected={this.state.selectedTab === 'profile'}
+						seselectedTitleStyle={{ color: blud }}
+						title="Profile"
+						renderIcon={() => (
+							<Image style={styles.image} source={require('./res/images/ic_trending.png')} />
+						)}
+						renderSelectedIcon={() => (
+							<Image
+								style={[styles.image, { tintColor: 'red' }]}
+								source={require('./res/images/ic_trending.png')}
+							/>
+						)}
+						renderBadge={() => <CustomBadgeView />}
+						onPress={() => this.setState({ selectedTab: 'profile' })}
+					>
+						<View style={styles.page2} />
+					</TabNavigator.Item>
+				</TabNavigator>
+			</View>
+		)
+	}
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+	container: {
+		flex: 1,
+		justifyContent: 'center',
+		alignItems: 'center',
+		backgroundColor: '#F5FCFF',
+	},
+	page1: {
+		flex: 1,
+		backgroundColor: red,
+	},
+	page2: {
+		flex: 1,
+		backgroundColor: blud,
+	},
+	image: {
+		width: 20,
+		height: 20,
+	},
+})
 
-AppRegistry.registerComponent('rngithub', () => rngithub);
+AppRegistry.registerComponent('rngithub', () => rngithub)
