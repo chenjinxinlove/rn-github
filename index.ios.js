@@ -5,7 +5,7 @@
  */
 
 import React, { Component } from 'react'
-import { AppRegistry, StyleSheet, Image, Text, View } from 'react-native'
+import { AppRegistry, StyleSheet, Image, Text, View, CustomBadgeView } from 'react-native'
 import TabNavigator from 'react-native-tab-navigator'
 
 export default class rngithub extends Component {
@@ -21,7 +21,7 @@ export default class rngithub extends Component {
 				<TabNavigator>
 					<TabNavigator.Item
 						selected={this.state.selectedTab === 'tb_popular'}
-						seselectedTitleStyle={{color: red}}
+						seselectedTitleStyle={{color: 'red'}}
 						title="Home"
 						renderIcon={() => (
 							<Image style={styles.image} source={require('./res/images/ic_polular.png')} />
@@ -41,7 +41,7 @@ export default class rngithub extends Component {
 						selected={this.state.selectedTab === 'tb_trending'}
 						seselectedTitleStyle = {
 							{
-								color: blud
+								color: '#ffd'
 							}
 						}
 						title="Profile"
@@ -61,7 +61,7 @@ export default class rngithub extends Component {
 					</TabNavigator.Item>
 					<TabNavigator.Item
 						selected={this.state.selectedTab === 'tb_my'}
-						seselectedTitleStyle = {{color: blud}}
+						seselectedTitleStyle = {{color: '#ffd'}}
 						title="Profile"
 						renderIcon={() => (
 							<Image style={styles.image} source={require('./res/images/ic_trending.png')} />
@@ -79,7 +79,7 @@ export default class rngithub extends Component {
 					</TabNavigator.Item>
 					<TabNavigator.Item
 						selected={this.state.selectedTab === 'profile'}
-						seselectedTitleStyle = {{color: blud}}
+						seselectedTitleStyle = {{color: '#ffd'}}
 						title="Profile"
 						renderIcon={() => (
 							<Image style={styles.image} source={require('./res/images/ic_trending.png')} />
@@ -97,7 +97,7 @@ export default class rngithub extends Component {
 					</TabNavigator.Item>
 					<TabNavigator.Item
 						selected={this.state.selectedTab === 'profile'}
-						seselectedTitleStyle = {{color: blud}}
+						seselectedTitleStyle = {{color: '#ffd'}}
 						title="Profile"
 						renderIcon={() => (
 							<Image style={styles.image} source={require('./res/images/ic_trending.png')} />
@@ -115,7 +115,7 @@ export default class rngithub extends Component {
 					</TabNavigator.Item>
 					<TabNavigator.Item
 						selected={this.state.selectedTab === 'profile'}
-						seselectedTitleStyle={{ color: blud }}
+						seselectedTitleStyle={{ color: '#ffd' }}
 						title="Profile"
 						renderIcon={() => (
 							<Image style={styles.image} source={require('./res/images/ic_trending.png')} />
@@ -133,7 +133,7 @@ export default class rngithub extends Component {
 					</TabNavigator.Item>
 					<TabNavigator.Item
 						selected={this.state.selectedTab === 'profile'}
-						seselectedTitleStyle={{ color: blud }}
+						seselectedTitleStyle={{ color: '#ffd' }}
 						title="Profile"
 						renderIcon={() => (
 							<Image style={styles.image} source={require('./res/images/ic_trending.png')} />
@@ -164,11 +164,11 @@ const styles = StyleSheet.create({
 	},
 	page1: {
 		flex: 1,
-		backgroundColor: red,
+		backgroundColor: 'red',
 	},
 	page2: {
 		flex: 1,
-		backgroundColor: blud,
+		backgroundColor: '#fdd',
 	},
 	image: {
 		width: 20,
