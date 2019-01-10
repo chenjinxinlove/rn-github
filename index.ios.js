@@ -6,19 +6,60 @@
 
 import React, { Component } from 'react'
 import { AppRegistry, StyleSheet, Image, Text, View, CustomBadgeView } from 'react-native'
-import { TabNavigator, TabNavigatorItem } from 'react-native-tab-navigator'
+import TabNavigator from 'react-native-tab-navigator'
 
 export default class rngithub extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			selectedTab: 'tb_popular',
+			selectedTab: 'home',
 		}
 	}
 	render() {
 		return (
 			<View style={styles.container}>
-				<Text>dfsdfsdjjj</Text>
+				<TabNavigator>
+					<TabNavigator.Item
+							selected={this.state.selectedTab === 'home'}
+							title="Home"
+							renderIcon={() => <Image style={styles.image} source={require('./res/images/ic_polular.png')} />}
+							renderSelectedIcon={() => <Image style={[styles.image, { tintColor: '#007aff' }]} source={require('./res/images/ic_polular.png')} />}
+							onPress={() => this.setState({ selectedTab: 'home' })}>
+						<View style={styles.pages1}>
+							<Text>这是首页</Text>
+						</View>
+					</TabNavigator.Item>
+					<TabNavigator.Item
+							selected={this.state.selectedTab === 'shebei'}
+							title="Profile"
+							renderIcon={() => <Image style={styles.image} source={require('./res/images/ic_trending.png')} />}
+							renderSelectedIcon={() => <Image style={[styles.image, { tintColor: '#007aff' }]} source={require('./res/images/ic_trending.png')} />}
+							onPress={() => this.setState({ selectedTab: 'shebei' })}>
+						<View style={styles.pages2}>
+							<Text>设备列表</Text>
+						</View>
+					</TabNavigator.Item>
+					<TabNavigator.Item
+							selected={this.state.selectedTab === 'home1'}
+							title="Home"
+							renderIcon={() => <Image style={styles.image} source={require('./res/images/ic_polular.png')} />}
+							renderSelectedIcon={() => <Image style={[styles.image, { tintColor: '#007aff' }]} source={require('./res/images/ic_polular.png')} />}
+							onPress={() => this.setState({ selectedTab: 'home1' })}>
+						<View style={styles.pages1}>
+							<Text>这是首页</Text>
+						</View>
+					</TabNavigator.Item>
+					<TabNavigator.Item
+							selected={this.state.selectedTab === 'shebei1'}
+							title="Profile"
+							renderIcon={() => <Image style={styles.image} source={require('./res/images/ic_trending.png')} />}
+							renderSelectedIcon={() => <Image style={[styles.image, { tintColor: '#007aff' }]} source={require('./res/images/ic_trending.png')} />}
+							onPress={() => this.setState({ selectedTab: 'shebei1' })}>
+						<View style={styles.pages2}>
+							<Text>设备列表</Text>
+						</View>
+					</TabNavigator.Item>
+				</TabNavigator>
 			</View>
 		)
 	}
@@ -27,8 +68,6 @@ export default class rngithub extends Component {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		justifyContent: 'center',
-		alignItems: 'center',
 		backgroundColor: '#F5FCFd',
 	},
 	page1: {
