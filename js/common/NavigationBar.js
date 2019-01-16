@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { StyleSheet, Image, Text, View, StatusBar } from 'react-native'
+import React, { Component, PropTypes } from 'react'
+import { StyleSheet, Image, Text, View, StatusBar, Platform } from 'react-native'
 import TabNavigator from 'react-native-tab-navigator'
 
 const NAV_BAR_HEIGHT_ADNROID = 50

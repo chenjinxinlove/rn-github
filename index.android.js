@@ -11,6 +11,7 @@ import {
   Text,
   View
 } from 'react-native';
+import setup from './js/setup'
 
 export default class rngithub extends Component {
   render() {
@@ -50,4 +51,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('rngithub', () => rngithub);
+AppRegistry.registerComponent('rngithub', () => setup);
