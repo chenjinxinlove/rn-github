@@ -1,4 +1,4 @@
-export default class HttpUtils {
+class HttpUtils {
   static get(url) {
     return new Promise((resolve, reject) => {
       fetch(url)
@@ -31,3 +31,7 @@ export default class HttpUtils {
     })
   }
 }
+
+const http = new HttpUtils()
+
+export default http

@@ -7,8 +7,7 @@ const NAV_BAR_HEIGHT_IOS = 44
 const STATUS_BAR_HEIGHT = 20
 const StatusBarShape = {
   backgroundColor: PropTypes.string,
-  barStyle: PropTypes.oneOf(['default', 'light-content', 'dark-content']),
-  hidden: PropTypes.bool
+  barStyle: PropTypes.oneOf(['default', 'light-content', 'dark-content'])
 }
 
 export default class NavigationBar extends Component {
@@ -22,10 +21,6 @@ export default class NavigationBar extends Component {
     statusBar: PropTypes.shape()
   }
   static defaultProps = {
-    statusBar: {
-      barStyle: 'light-content',
-      hidden: false
-    }
   }
   constructor(props) {
     super(props)

@@ -7,6 +7,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, Image, Text, View, CustomBadgeView } from 'react-native'
 import TabNavigator from 'react-native-tab-navigator'
+import PopularPage from './PopularPage'
 
 export default class rngithub extends Component {
   constructor(props) {
@@ -26,7 +27,7 @@ export default class rngithub extends Component {
             renderSelectedIcon={() => <Image style={[styles.image, { tintColor: '#007aff' }]} source={require('../../res/images/ic_polular.png')} />}
             onPress={() => this.setState({ selectedTab: 'home' })}>
             <View style={styles.pages1}>
-              <Text>这是首页</Text>
+              <PopularPage />
             </View>
           </TabNavigator.Item>
           <TabNavigator.Item
@@ -69,6 +70,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F5FCFd',
+    paddingTop: 50
   },
   page1: {
     flex: 1,
