@@ -8,7 +8,7 @@ import React, { Component } from 'react'
 import { StyleSheet, Image, Text, View, CustomBadgeView } from 'react-native'
 import TabNavigator from 'react-native-tab-navigator'
 import PopularPage from './PopularPage'
-
+import WebViewTest from './WebViewTest'
 export default class rngithub extends Component {
   constructor(props) {
     super(props)
@@ -37,7 +37,7 @@ export default class rngithub extends Component {
             renderSelectedIcon={() => <Image style={[styles.image, { tintColor: '#007aff' }]} source={require('../../res/images/ic_trending.png')} />}
             onPress={() => this.setState({ selectedTab: 'shebei' })}>
             <View style={styles.pages2}>
-              <Text>设备列表</Text>
+              <WebViewTest/>
             </View>
           </TabNavigator.Item>
           <TabNavigator.Item
